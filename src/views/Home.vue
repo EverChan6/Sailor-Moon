@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
+    <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
+    <input v-model="val" placeholder="请输入">
   </div>
 </template>
 
@@ -12,7 +13,11 @@ import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 @Component({
   components: {
     HelloWorld,
-  },
-})
-export default class Home extends Vue {}
+  }
+}) 
+export default class Home extends Vue {
+  private val:string = 'xxxxxxxxa'
+
+  private funcA(params:any){}
+}
 </script>
