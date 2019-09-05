@@ -6,7 +6,7 @@
           <img v-lazy="imgSrc"/>
         </div>
         <div class="description">
-          <h4><b>今天在长隆水上乐园玩耍😊</b></h4>
+          <h4><b>在长隆水上乐园玩耍😊</b></h4>
           <p></p>
           <span>2019/09/09</span>
         </div>
@@ -24,15 +24,45 @@ import { Component, Vue } from 'vue-property-decorator'
   }
 }) 
 export default class Home extends Vue {
-  private imgSrc: string = require('../assets/images/logo.jpg')
-
-   
-    
+  private imgSrc: string = require('../assets/images/logo.jpg')  
   
 }
 </script>
 
 <style lang="scss" scoped>
+.daily-container {
+  height: 100vh;
+  overflow-y: scroll;
+  /*修改滚动条样式*/
+  // 滚动条整体部分
+  &::-webkit-scrollbar{
+    width:10px;
+    height:10px;
+  }
+  // 滚动条的轨道（里面装有Thumb）
+  &::-webkit-scrollbar-track{
+    background: rgb(238, 236, 232);
+    border-radius:2px;
+  }
+  // 滚动条里面的小方块，能向上向下移动（或往左往右移动，取决于是垂直滚动条还是水平滚动条）
+  &::-webkit-scrollbar-thumb{
+    background: #fcc52e;
+    border-radius:10px;
+  }
+  &::-webkit-scrollbar-thumb:hover{
+    background: rgb(245, 221, 142);
+  }
+  // 边角，即两个滚动条的交汇处
+  &::-webkit-scrollbar-corner{
+    background: #ccc;
+  }
+  /*定义最上方和最下方的按钮*/
+  &::-webkit-scrollbar-button {
+    border-bottom: 10px solid #000;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+}
 .card-container {
   display: grid;
   justify-content: space-between;

@@ -30,6 +30,7 @@ export default class Home extends Vue {
         this.$router.push('daily')
         break
       case 1: 
+        // this.$router.push('about')
         break
       case 2:
         break
@@ -49,6 +50,12 @@ export default class Home extends Vue {
 
 .tab {
   flex: 1;
+}
+
+@media screen and (max-width: 960px) {
+  .side-bar {
+    display: none;
+  }
 }
 
 </style>
