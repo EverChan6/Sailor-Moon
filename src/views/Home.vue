@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <div class="nav"></div>
     <side-bar :catalog="catalog" @openUp="openUp" class="side-bar">
       <img class="site-logo" src="../assets/images/logo.jpg" alt="网站Logo" slot="logo">
       <template slot="list">
@@ -52,9 +53,17 @@ export default class Home extends Vue {
   flex: 1;
 }
 
+.nav {
+  display: none;
+}
+
 @media screen and (max-width: 960px) {
   .side-bar {
     display: none;
+  }
+
+  .nav {
+    display: block;
   }
 }
 
