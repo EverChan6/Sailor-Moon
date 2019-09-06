@@ -4,7 +4,7 @@
       <slot name="logo"></slot>
     </div>
     <div class="catalog">
-      <div class="catalog-item" v-for="(item, idx) in catalog" :key="idx">{{item}}</div>
+      <div class="catalog-item" v-for="(item, idx) in catalog" :key="idx" @click="tapIt(idx)">{{item}}</div>
     </div>
     <div class="share-list">
       <slot name="list"></slot>
@@ -23,16 +23,19 @@ export default class HelloWorld extends Vue {
   @Prop() private catalog!: Array<string>;
   private color: string = '#fff';
 
+  private tapIt(idx: number){
+    this.$emit('openUp', idx)
+  }
 }
 </script>
 
 <style scoped lang="scss">
 .side-bar {
-  position: fixed;
-  left: 0;
-  top: 0;
+  // position: fixed;
+  // left: 0;
+  // top: 0;
   width: 200px;
-  height: 100%;
+  height: 100vh;
   border-right: 1px solid #eee;
   display: flex;
   flex-direction: column;

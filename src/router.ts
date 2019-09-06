@@ -11,7 +11,14 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      children: [
+        {
+          path: 'daily',
+          name: 'daily',
+          component: () => import('./views/Daily.vue')
+        }
+      ]
     },
     {
       path: '/about',
