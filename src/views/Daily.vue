@@ -4,8 +4,11 @@
       <div class="card" v-for="i in 56" :key="i">
         <div class="img-container">
           <img v-lazy="imgSrc"/>
+          <div class="description">
+            覆盖在图片上面的详细描述两大块的结构i嗯啊考虑过你来对抗哦i我那个拦拉卡尼帝国
+          </div>
         </div>
-        <div class="description">
+        <div class="img-title">
           <h4><b>在长隆水上乐园玩耍😊</b></h4>
           <p></p>
           <span>2019/09/09</span>
@@ -83,13 +86,36 @@ export default class Home extends Vue {
 }
 
 .img-container {
+  position: relative;
   img {
     max-width: 100%;
     max-height: 100%;
   }
 }
 
-.description {
+.img-title {
   padding: 2px 10px;
 }
+
+.description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  background: rgba(0, 0, 0, .5);
+  color: #fcc52e;
+  opacity: 0;
+  text-align: left;
+  &:hover {
+    opacity: 1;
+  }
+ 
+}
+
+
 </style>
