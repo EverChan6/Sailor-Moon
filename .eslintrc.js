@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    "airbnb-base"
+    // "airbnb-base",
   ],
   globals: {
       // 这里填入你的项目需要的全局变量

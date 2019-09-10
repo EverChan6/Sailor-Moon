@@ -66,7 +66,7 @@ export default class Home extends Vue {
 .card-container {
   display: grid;
   justify-content: space-between;
-  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 20px;
   padding: 50px;
 }
